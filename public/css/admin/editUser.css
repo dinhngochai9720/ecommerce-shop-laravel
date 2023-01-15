@@ -1,0 +1,26 @@
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    background-color: #ffffff;
+    color: #006aff;
+}
+
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
+    color: rgb(40, 38, 38);
+}
+
+.select2-selection--multiple .select2-selection__choice__remove:hover {
+    background-color: #ffffff !important;
+    color: #d9534f !important;
+    outline: none;
+}
+
+.select2-container--default .select2-dropdown .select2-search__field:focus,
+.select2-container--default
+    .select2-search--inline
+    .select2-search__field:focus {
+    outline: 0;
+    border: none;
+}

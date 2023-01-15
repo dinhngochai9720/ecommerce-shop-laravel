@@ -1,0 +1,12 @@
+.main-image-product {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #0c86e9;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.main-image-product-container {
+    margin-top: 20px;
+}
+

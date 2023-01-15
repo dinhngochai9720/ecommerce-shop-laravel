@@ -1,0 +1,25 @@
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+#blah {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #0c86e9 !important;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
+.message-alert {
+    margin-top: 5px;
+    padding: 0;
+    text-align: center;
+}
