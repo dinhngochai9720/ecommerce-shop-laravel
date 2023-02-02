@@ -15,7 +15,7 @@
         <div class="row">
 
           <div class="col-md-12">
-              Trang home hiển thị thống kê
+              Thống kê
           </div>
         </div>
       </div>

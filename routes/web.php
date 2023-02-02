@@ -26,35 +26,13 @@ use UniSharp\LaravelFilemanager\Lfm;
 */
 
 Auth::routes();
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//Login Admin
+Route::get('/', [AdminController::class, 'login'])->name('admin.login');
+Route::post('/postlogin', [AdminController::class, 'postLogin'])->name('admin.postLogin');
 
-
-
-//User Login
-Route::prefix('/user')->name('user.')->group(function () {
-    //not login
-    Route::middleware(['guest'])->group(
-        function () {
-
-            Route::get("/login", function () {
-                return view("dashboard.user.login");
-            })->name('login');
-            Route::get("/register", function () {
-                return view("dashboard.user.register");
-            })->name('register');
-
-            Route::post("/store", [UserUserController::class, 'store'])->name("store");
-            Route::post("/dologin", [UserUserController::class, 'dologin'])->name("dologin");
-        }
-    );
-    // logged
-    Route::get("/index", [UserUserController::class, 'index'])->name("index");
-});
-
-
-
-
+//Logout Admin
+Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 
 Route::prefix('/admin')->group(function () {
@@ -62,14 +40,9 @@ Route::prefix('/admin')->group(function () {
         return view('admin.home');
     })->middleware(['auth'])->name('admin.home');
 
-    //Login Admin
-    Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
-    Route::post('/postlogin', [AdminController::class, 'postLogin'])->name('admin.postLogin');
-    Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 
     Route::prefix('/categories')->group(function () {
-
         Route::get('/index', [CategoryController::class, 'index'])->name('categories.index')->middleware('can:list_category');
         Route::get('/create', [CategoryController::class, 'create'])->name('categories.create')->middleware('can:add_category');
         Route::post('/store', [CategoryController::class, 'store'])->name('categories.store');

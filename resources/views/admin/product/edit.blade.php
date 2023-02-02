@@ -6,6 +6,14 @@
 @section('css')
 <link href="{{asset('vendors/select2/select2.min.css')}}" rel="stylesheet" />
 <link rel="stylesheet" href="{{asset('css/admin/editProduct.css')}}">
+
+<link
+class="jsbin"
+href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+rel="stylesheet"
+type="text/css"
+/>
+
 @endsection
 
 @section('content')
@@ -43,6 +51,13 @@
                                 <label >Ảnh sản phẩm</label>
                                 <input type="file" class="form-control-file"
                                 name="feature_image_path"  placeholder="Chọn ảnh sản phẩm" >
+
+{{-- 
+                                <div class="form-group col-md-12 main-image-product-container d-flex justify-content-center align-items-center">
+                                  <div class="row">
+                                    <img id="blah"  alt="choose image" class="main-image-product" src="{{$product->feature_image_path}}"/>
+                                  </div>
+                                </div> --}}
                                 
                                 <div class="form-group col-md-12 main-image-product-container d-flex justify-content-center align-items-center">
                                   <div class="row">
@@ -115,6 +130,8 @@
 <script src="https://cdn.tiny.cloud/1/xrlr14bgpo57f7bjdvuo228v0aliwgqk40mzbzwo11q8w26d/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 <script type="text/javascript" src="{{asset('js/admin/addProduct.js') }}"></script>
+
+<script src="{{asset('js/admin/showImageUpload.js')}}"></script>
 
 
 @endsection
